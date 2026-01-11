@@ -1,0 +1,6 @@
+Outer Fold,Accuracy,F1 Score,Precision,Recall,Best Params
+1,0.8888135593220339,0.8847924959905168,0.884716985358662,0.8888135593220339,"{'clf__criterion': 'gini', 'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__min_samples_split': 2}"
+2,0.8806779661016949,0.8842645848186326,0.8909043761577758,0.8806779661016949,"{'clf__criterion': 'entropy', 'clf__max_depth': 5, 'clf__min_samples_leaf': 1, 'clf__min_samples_split': 2}"
+3,0.8622795115332429,0.8731483680987658,0.9142362006645959,0.8622795115332429,"{'clf__criterion': 'gini', 'clf__max_depth': 5, 'clf__min_samples_leaf': 4, 'clf__min_samples_split': 2}"
+4,0.917910447761194,0.9216702128748159,0.935102882322248,0.917910447761194,"{'clf__criterion': 'gini', 'clf__max_depth': 5, 'clf__min_samples_leaf': 4, 'clf__min_samples_split': 10}"
+5,0.8683853459972863,0.874075744273286,0.8882966904400921,0.8683853459972863,"{'clf__criterion': 'gini', 'clf__max_depth': 5, 'clf__min_samples_leaf': 4, 'clf__min_samples_split': 2}"

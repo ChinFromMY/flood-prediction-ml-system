@@ -1,0 +1,6 @@
+Outer Fold,Accuracy,F1 Score,Precision,Recall,Best Params
+1,0.9111864406779661,0.9046677751379356,0.9137458236616959,0.9111864406779661,"{'clf__criterion': 'gini', 'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__min_samples_split': 2, 'clf__n_estimators': 100}"
+2,0.903728813559322,0.9007012775183117,0.9003109440088748,0.903728813559322,"{'clf__criterion': 'gini', 'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__min_samples_split': 2, 'clf__n_estimators': 300}"
+3,0.9647218453188603,0.9650282504158778,0.9655881622237014,0.9647218453188603,"{'clf__criterion': 'entropy', 'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__min_samples_split': 2, 'clf__n_estimators': 200}"
+4,0.9552238805970149,0.9546214190354887,0.954654963829071,0.9552238805970149,"{'clf__criterion': 'entropy', 'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__min_samples_split': 2, 'clf__n_estimators': 300}"
+5,0.9151967435549525,0.9140615207822202,0.913546887699979,0.9151967435549525,"{'clf__criterion': 'entropy', 'clf__max_depth': None, 'clf__min_samples_leaf': 1, 'clf__min_samples_split': 2, 'clf__n_estimators': 300}"
