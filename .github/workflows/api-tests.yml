@@ -25,9 +25,10 @@ jobs:
 
     - name: Start FastAPI server
       run: |
-        uvicorn backend.main:app --host 127.0.0.1 --port 8000 & sleep 5
+        uvicorn backend.main:app --host 127.0.0.1 --port 8000 & 
+        sleep 15
 
     - name: Run Tests
       run: |
-        pytest backend/Tests
+        pytest backend/tests
     
