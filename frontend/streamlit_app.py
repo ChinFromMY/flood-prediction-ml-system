@@ -4,7 +4,9 @@ import json
 
 # --- CONFIGURATION ---
 # The URL where your FastAPI server is running locally
-FASTAPI_URL = "http://127.0.0.1:8000/predict-flood/"
+# FASTAPI_URL = "http://127.0.0.1:8000/predict-flood/"
+FASTAPI_URL = "https://flood-backend-api.onrender.com/predict-flood/"
+
 
 st.set_page_config(
     page_title="Flood Prediction Dashboard",
