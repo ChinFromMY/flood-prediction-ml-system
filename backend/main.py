@@ -15,14 +15,7 @@ logging.basicConfig(
 
 # load model 
 BASE_DIR = os.path.dirname(__file__)
-PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
-
-MODEL_PATH = os.path.join(
-    PROJECT_ROOT,
-    "new_pipeline",
-    "best_model_timeseries",
-    "Random_Forest_final_model.pkl"
-)
+MODEL_PATH = os.path.join(BASE_DIR, "model_prod.pkl")
 
 try:
     with open(MODEL_PATH, "rb") as f:
