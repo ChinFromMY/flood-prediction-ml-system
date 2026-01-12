@@ -1,6 +1,0 @@
-Outer Fold,Accuracy,F1 Score,Precision,Recall,Best Params
-1,0.912542372881356,0.9070226831903081,0.9133570140641905,0.912542372881356,"{'clf__metric': 'manhattan', 'clf__n_neighbors': 10, 'clf__weights': 'uniform'}"
-2,0.8996610169491526,0.8955625271241346,0.8957314232844852,0.8996610169491526,"{'clf__metric': 'manhattan', 'clf__n_neighbors': 10, 'clf__weights': 'distance'}"
-3,0.9525101763907734,0.95269036336777,0.9529166469136371,0.9525101763907734,"{'clf__metric': 'euclidean', 'clf__n_neighbors': 10, 'clf__weights': 'distance'}"
-4,0.9369063772048847,0.9364928238631037,0.9362279664498562,0.9369063772048847,"{'clf__metric': 'manhattan', 'clf__n_neighbors': 7, 'clf__weights': 'uniform'}"
-5,0.9063772048846676,0.9048334471949476,0.9041990001931164,0.9063772048846676,"{'clf__metric': 'manhattan', 'clf__n_neighbors': 10, 'clf__weights': 'distance'}"
