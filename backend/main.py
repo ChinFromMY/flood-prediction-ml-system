@@ -3,7 +3,7 @@ import pickle
 import logging
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, field_validator
 
 # load model 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -12,7 +12,7 @@ LOG_PATH = os.path.join(BASE_DIR, "flood.api.log")
 
 # logging
 logging.basicConfig(
-    filename = "flood.api.log",
+    filename = LOG_PATH,
     level = logging.INFO,
     format = "%(asctime)s [%(levelname)s] %(message)s"
 )
@@ -53,37 +53,43 @@ class FloodData(BaseModel):
 
 
 # input validation
-    @validator("Max_Temp")
+    @field_validator("Max_Temp")
+    @classmethod
     def max_temp_range(cls, v):
         if not -50 <= v <= 50:
             raise ValueError("Max_Temp must be between -50 and 50 °C")
         return v
 
-    @validator("Min_Temp")
+    @field_validator("Min_Temp")
+    @classmethod
     def min_temp_range(cls, v):
         if not -50 <= v <= 50:
             raise ValueError("Min_Temp must be between -50 and 50 °C")
         return v
 
-    @validator("Rainfall")
+    @field_validator("Rainfall")
+    @classmethod
     def rainfall_range(cls, v):
         if v < 0:
             raise ValueError("Rainfall cannot be negative")
         return v
 
-    @validator("Relative_Humidity")
+    @field_validator("Relative_Humidity")
+    @classmethod
     def humidity_range(cls, v):
         if not 0 <= v <= 100:
             raise ValueError("Relative_Humidity must be 0-100%")
         return v
 
-    @validator("Wind_Speed")
+    @field_validator("Wind_Speed")
+    @classmethod
     def wind_speed_range(cls, v):
         if v < 0:
             raise ValueError("Wind_Speed cannot be negative")
         return v
 
-    @validator("Cloud_Coverage")
+    @field_validator("Cloud_Coverage")
+    @classmethod
     def cloud_coverage_range(cls, v):
         if not 0 <= v <= 100:
             raise ValueError("Cloud_Coverage must be 0-100%")
