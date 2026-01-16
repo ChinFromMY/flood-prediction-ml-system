@@ -10,12 +10,12 @@
 - Continuous integration using GitHub Actions
 - Cloud deployment on Render
 
-The performance of these models is compared using evaluation metrics such as accuracy, precision, recall and F1 score.
-
-# System Architecture
-
-
-
+## Model performance is evaluated using:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion matrix
 
 ## Project Structure:
 
@@ -41,7 +41,7 @@ flood-prediction-ml-system/
 └── README.md
 
 
-# Machine Learning Pipeline:
+## Machine Learning Pipeline:
 The project evaluates and compares multiple classification models:
 - Random Forest
 - Logistic Regression
@@ -53,21 +53,20 @@ Training workflow includes:
 - Time series cross-validation
 - Nested cross-validation
 - Hyperparameter tuning using Grid Search
-- Model evaluation using:
-    - Accuracy
-    - Precision
-    - Recall
-    - F1-score
-    - Confusion matrix
+
 The best-performing model (Random Forest) is saved as model_prod.pkl and used for production inference.
 
-# Automated Testing:
+## Automated Testing:
 API tests are implemented using:
 - PyTest
 - Requests
 
 Tests verify:
 - API availability
+- Input validation
+
+## Deployment
+- Backend and frontend services are deployed on Render
 
 
 
