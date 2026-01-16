@@ -29,14 +29,21 @@ jobs:
 
         echo "Waiting for API to be ready..."
         for i in {1..30}; do
-          if curl -s http://127.0.0.1:8000/docs > /dev/null; then
+          if curl -s http://127.0.0.1:8000/health > /dev/null; then
             echo "API is ready"
+            READY=1
             break
           fi
           sleep 2 
         done
 
+        if [ "$READY" -ne 1]; then
+          echo "API failed to start"
+          exit 1
+        fi
+
+
     - name: Run Tests
       run: |
         pytest backend/tests
-    
+    #
