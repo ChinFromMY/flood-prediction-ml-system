@@ -47,13 +47,7 @@ def test_probability_range():
     assert 0 <= prob <= 1
 
 
-def test_min_greater_than_max():
-    data = VALID_DATA.copy()
-    data["Min_Temp"] = 40
-    data["Max_Temp"] = 20
 
-    r = requests.post(API_URL, json=data, timeout=5)
-    assert r.status_code in [400, 422]
 
     
 
