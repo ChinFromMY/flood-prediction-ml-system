@@ -5,6 +5,11 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, validator
 
+# load model 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model_prod.pkl")
+LOG_PATH = os.path.join(BASE_DIR, "flood.api.log")
+
 # logging
 logging.basicConfig(
     filename = "flood.api.log",
@@ -12,11 +17,7 @@ logging.basicConfig(
     format = "%(asctime)s [%(levelname)s] %(message)s"
 )
 
-
-# load model 
-BASE_DIR = os.path.dirname(__file__)
-MODEL_PATH = os.path.join(BASE_DIR, "model_prod.pkl")
-
+# load ML model
 try:
     with open(MODEL_PATH, "rb") as f:
         model = pickle.load(f)
@@ -24,8 +25,7 @@ except FileNotFoundError:
     logging.critical(f"Model file not found at {MODEL_PATH}")
     raise RuntimeError(f"Model file not found at {MODEL_PATH}")
 
-
-
+# FastAPI 
 app = FastAPI()
 
 app.add_middleware(
@@ -36,6 +36,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# endpoint for CI
+@app.get("/health")
+def health():
+    return{"status": "ok"}
+
+
 # input
 class FloodData(BaseModel):
     Max_Temp: float
@@ -44,6 +50,7 @@ class FloodData(BaseModel):
     Relative_Humidity: float
     Wind_Speed: float
     Cloud_Coverage: float
+
 
 # input validation
     @validator("Max_Temp")
